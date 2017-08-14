@@ -10,13 +10,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import connection.DbConnection;
 /**
  *
- * @author 985931
+ * @author Natnael Getachew
  */
 public class DictServlet extends HttpServlet {
-
+    private DbConnection dbConn = new DbConnection();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -28,7 +28,9 @@ public class DictServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+      
+        response.setContentType("text/html;charset=UTF-8");      
+        
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
@@ -37,6 +39,10 @@ public class DictServlet extends HttpServlet {
             out.println("<title>Servlet DictServlet</title>");            
             out.println("</head>");
             out.println("<body>");
+            
+            if(dbConn.openConnection() != null)
+                out.println("yesss Connected");
+                    
             out.println("<h1>Servlet DictServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
