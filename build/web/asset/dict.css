@@ -2,4 +2,43 @@
     Created on : Aug 14, 2017, 2:21:11 PM
     Author     : Natnael Getachew
 */
-
+body{
+    background: #fcfcfc;
+    padding:15px;
+}
+.container{
+    max-width: 700px;
+    background: #fff;
+    min-height: 400px;
+    border-radius: 2px;
+    border:2px solid #eee;
+}
+.title{
+    padding:15px;
+}
+.form-inline{
+    border-bottom: 1px solid #eee;
+     border-top: 1px solid #eee;
+     padding: 10px 0;
+}
+.form-inline #lookup-btn{
+    margin-left:10px;
+    cursor:pointer;
+}
+#result-wrap{
+}
+.result{
+    margin-bottom: 20px;
+}
+.bg-danger{
+    color:#fff;
+    padding: 5px;
+}
+#result-wrap{
+    margin-top:10px;
+}
+.validator-wrap{
+    position: fixed;
+    right:10px;
+    bottom:10px;
+}
