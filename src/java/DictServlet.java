@@ -31,7 +31,7 @@ public class DictServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String inpTerm = request.getParameter("inpTerm").toString().trim();
+        String inpTerm = (request.getParameter("inpTerm")!=null) ? request.getParameter("inpTerm").toString().trim():"";
         //System.out.println(inpTerm);
         
         if(inpTerm == ""){
